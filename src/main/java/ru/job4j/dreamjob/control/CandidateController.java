@@ -1,5 +1,6 @@
 package ru.job4j.dreamjob.control;
 
+import net.jcip.annotations.ThreadSafe;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import ru.job4j.dream.model.Candidate;
 import ru.job4j.dreamjob.persistence.CandidateStore;
 
+@ThreadSafe
 public class CandidateController {
     private final CandidateStore store = CandidateStore.instOf();
 

@@ -1,11 +1,13 @@
 package ru.job4j.dreamjob.persistence;
 
+import net.jcip.annotations.ThreadSafe;
 import ru.job4j.dream.model.Candidate;
 
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+@ThreadSafe
 public class CandidateStore {
 
     private static final CandidateStore INST = new CandidateStore();
