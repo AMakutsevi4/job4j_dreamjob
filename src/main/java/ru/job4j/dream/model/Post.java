@@ -1,12 +1,18 @@
 package ru.job4j.dream.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Post {
+public class Post implements Serializable {
     private int id;
     private String name;
     private String description;
     private String created;
+    private City city;
+
+    public Post() {
+
+    }
 
     public Post(int id, String name, String description, String created) {
         this.id = id;
@@ -53,6 +59,14 @@ public class Post {
         this.created = created;
     }
 
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -69,5 +83,6 @@ public class Post {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 
 }
