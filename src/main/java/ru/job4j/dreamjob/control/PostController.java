@@ -34,12 +34,6 @@ public class PostController {
     @GetMapping("/addPost")
     public String addPost(Model model) {
         model.addAttribute("post", new Post(0, "Заполните поле"));
-        formAddPost(model);
-        return "addPost";
-    }
-
-    @GetMapping("/formAddPost")
-    public String formAddPost(Model model) {
         model.addAttribute("cities", cityService.getAllCities());
         return "addPost";
     }
@@ -53,6 +47,7 @@ public class PostController {
     @GetMapping("/formUpdatePost/{postId}")
     public String formUpdatePost(Model model, @PathVariable("postId") int id) {
         model.addAttribute("post", postService.findById(id));
+        model.addAttribute("cities", cityService.getAllCities());
         return "updatePost";
     }
 

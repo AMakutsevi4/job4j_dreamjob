@@ -8,6 +8,7 @@ public class Post implements Serializable {
     private String name;
     private String description;
     private String created;
+    private boolean visible;
     private City city;
 
     public Post() {
@@ -65,6 +66,14 @@ public class Post implements Serializable {
         this.created = created;
     }
 
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
+
     public City getCity() {
         return city;
     }
@@ -91,4 +100,13 @@ public class Post implements Serializable {
     }
 
 
+    @Override
+    public String toString() {
+        return "Post{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + ", description='" + description + '\''
+                + ", created='" + created + '\''
+                + '}';
+    }
 }
