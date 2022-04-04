@@ -68,7 +68,7 @@ public class CandidateController {
 
     @GetMapping("/photoCandidate/{candidateId}")
     public ResponseEntity<Resource> download(@PathVariable("candidateId") Integer candidateId) {
-        Candidate candidate = candidateService.getById(candidateId);
+        Candidate candidate = candidateService.findById(candidateId);
         ResponseEntity<Resource> body = ResponseEntity.ok()
                 .headers(new HttpHeaders())
                 .contentLength(candidate.getPhoto().length)
