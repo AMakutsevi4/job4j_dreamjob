@@ -61,7 +61,7 @@ public class PostDBStore {
                      PreparedStatement.RETURN_GENERATED_KEYS)
         ) {
             ps.setString(1, post.getName());
-            ps.setInt(1, post.getId());
+            ps.setInt(2, post.getId());
             ps.execute();
             try (ResultSet id = ps.getGeneratedKeys()) {
                 if (id.next()) {
